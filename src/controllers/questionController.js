@@ -1,9 +1,9 @@
 const Database = require('../db/config')
 
 const route = require("../route")
+
 module.exports = {
 
-    
      async index(req, res){
         const db = await Database()
         const roomId = req.params.room
@@ -24,8 +24,8 @@ module.exports = {
         res.redirect(`/room/${roomId}`)
     } else {
         res.render('passincorrect', {roomId: roomId})
-    }
-    },
+            }
+                    },
 
     async create(req, res){
         const db = await Database()
@@ -37,7 +37,6 @@ module.exports = {
         res.redirect(`/room/${roomId}`)
     
         await db.close()
-
     }
 
 }
